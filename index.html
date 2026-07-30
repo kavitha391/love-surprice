@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Kavitha ❤️ Raju</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
 body{
 margin:0;
 height:100vh;
@@ -21,23 +19,20 @@ color:white;
 text-align:center;
 }
 
-
 .box{
-background:rgba(255,255,255,0.20);
+background:rgba(255,255,255,0.2);
 padding:30px;
 border-radius:25px;
-width:90%;
+width:85%;
 max-width:400px;
 }
 
-
 input{
 padding:12px;
-border:none;
 border-radius:15px;
+border:none;
 font-size:18px;
 }
-
 
 button{
 padding:12px 30px;
@@ -50,56 +45,35 @@ color:#ff3366;
 cursor:pointer;
 }
 
-
 .page{
 display:none;
 }
 
-
-.gallery img{
-
-width:120px;
-height:120px;
-object-fit:cover;
-border-radius:15px;
-margin:5px;
-
-}
-
-
 .heart{
-
 position:absolute;
 font-size:25px;
-animation:move 5s linear infinite;
-
+animation:fall 5s linear infinite;
 }
 
-
-@keyframes move{
-
-0%{
+@keyframes fall{
+from{
 top:-10%;
 }
-
-100%{
+to{
 top:110%;
 }
-
 }
-
 
 </style>
 
 </head>
 
-
 <body>
 
 
-<div id="first" class="box">
+<div id="one" class="box">
 
-<h1>❤️ Welcome My Love ❤️</h1>
+<h1>❤️ Surprise For You ❤️</h1>
 
 <h2>Enter Your Name</h2>
 
@@ -107,70 +81,29 @@ top:110%;
 
 <br>
 
-<button onclick="start()">Continue</button>
+<button onclick="start()">Continue ❤️</button>
 
 </div>
 
 
 
-
-<div id="second" class="box page">
+<div id="two" class="box page">
 
 <h1 id="welcome"></h1>
 
-<h2>Do You Love Me? ❤️</h2>
+<h2>Will You Stay With Me Forever? ❤️</h2>
 
+<button onclick="love()">YES ❤️</button>
 
-<button onclick="memory()">YES ❤️</button>
-
-
-<button id="no">
-NO 😜
-</button>
-
+<button id="no">NO 😜</button>
 
 </div>
 
 
 
+<div id="three" class="box page">
 
-
-<div id="third" class="box page">
-
-<h1>Our Memories 📸</h1>
-
-
-<div class="gallery">
-
-<img src="photo1.jpg">
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-<img src="photo4.jpg">
-<img src="photo5.jpg">
-<img src="photo6.jpg">
-<img src="photo7.jpg">
-<img src="photo8.jpg">
-<img src="photo9.jpg">
-<img src="photo10.jpg">
-
-
-</div>
-
-
-<button onclick="love()">Next ❤️</button>
-
-
-</div>
-
-
-
-
-
-<div id="fourth" class="box page">
-
-
-<h1>❤️ Forever Love ❤️</h1>
-
+<h1>❤️ My Love ❤️</h1>
 
 <p>
 
@@ -184,87 +117,54 @@ You are the love of my life ❤️
 
 </p>
 
-
 <h2>
 Kavitha Puppala ❤️ Raju Puppala
 </h2>
-
 
 <h3>
 Forever & Always 💖
 </h3>
 
-
 </div>
-
 
 
 
 <script>
 
-
 function hide(){
 
-first.style.display="none";
-
-second.style.display="none";
-
-third.style.display="none";
-
-fourth.style.display="none";
+one.style.display="none";
+two.style.display="none";
+three.style.display="none";
 
 }
-
-
 
 
 function start(){
 
 let n=document.getElementById("name").value;
 
-
 if(n==""){
-
-alert("Please enter your name ❤️");
-
+alert("Enter your name ❤️");
 return;
-
 }
-
 
 hide();
 
-second.style.display="block";
+two.style.display="block";
 
-welcome.innerHTML="Welcome "+n+" ❤️";
-
-
-}
-
-
-
-
-function memory(){
-
-hide();
-
-third.style.display="block";
+welcome.innerHTML="Hi "+n+" ❤️";
 
 }
-
-
-
 
 
 function love(){
 
 hide();
 
-fourth.style.display="block";
+three.style.display="block";
 
 }
-
-
 
 
 
@@ -283,8 +183,6 @@ no.style.top=Math.random()*80+"%";
 
 
 
-
-
 function hearts(){
 
 let h=document.createElement("div");
@@ -298,18 +196,16 @@ h.style.left=Math.random()*100+"%";
 document.body.appendChild(h);
 
 
-setTimeout(function(){
+setTimeout(()=>{
 
 h.remove();
 
 },5000);
 
-
 }
 
 
 setInterval(hearts,500);
-
 
 
 </script>
