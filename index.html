@@ -1,258 +1,189 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Kavitha ❤️ Raju</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
 body{
 margin:0;
 height:100vh;
-background:linear-gradient(135deg,#ff4b7d,#ffb6c1);
+background:pink;
 font-family:Arial;
 display:flex;
 justify-content:center;
 align-items:center;
-overflow:hidden;
-color:white;
 text-align:center;
+overflow:hidden;
 }
 
 .box{
-background:rgba(255,255,255,0.25);
+background:white;
 padding:30px;
-border-radius:25px;
-width:85%;
+border-radius:20px;
+width:80%;
 max-width:400px;
-box-shadow:0 0 20px white;
 }
 
-.page{
+.hide{
 display:none;
 }
 
 input{
-padding:12px;
-border:none;
-border-radius:20px;
+padding:10px;
 font-size:18px;
+border-radius:10px;
 }
 
 button{
-padding:12px 30px;
-border:none;
-border-radius:30px;
+padding:12px 25px;
 margin:10px;
+border:none;
+border-radius:20px;
+background:#ff4b7d;
+color:white;
 font-size:18px;
-background:white;
-color:#ff3366;
-cursor:pointer;
 }
 
 .heart{
 position:absolute;
 font-size:25px;
-animation:fall 5s linear infinite;
+animation:fall 4s linear infinite;
 }
 
 @keyframes fall{
-from{
-top:-10%;
-}
-to{
-top:110%;
-}
-}
-
-.glow{
-animation:shine 1s infinite alternate;
-}
-
-@keyframes shine{
-from{
-text-shadow:0 0 10px white;
-}
-to{
-text-shadow:0 0 30px yellow;
-}
-}
-
-.loveText{
-font-size:22px;
-line-height:1.8;
+from{top:-20px;}
+to{top:100vh;}
 }
 
 </style>
 
 </head>
 
-
 <body>
 
 
-<div id="page1" class="box">
+<div id="first" class="box">
 
-<h1>💌 A Small Surprise For You ❤️</h1>
+<h1>💌 Surprise ❤️</h1>
 
-<h2>Enter Your Name</h2>
+<p>Enter Your Name</p>
 
-<input id="name">
+<input id="username">
 
 <br>
 
-<button onclick="openPage()">Open ❤️</button>
+<button onclick="next()">Continue ❤️</button>
 
 </div>
 
 
 
-<div id="page2" class="box page">
+<div id="second" class="box hide">
 
-<h1 id="welcome"></h1>
+<h1 id="hello"></h1>
 
-<h2>Will You Stay With Me Forever? ❤️</h2>
+<h2>Will You Love Me Forever? ❤️</h2>
 
-
-<button onclick="yesClick()">YES ❤️</button>
-
+<button onclick="finalPage()">YES ❤️</button>
 
 <button id="noBtn">NO 😜</button>
 
-
 </div>
 
 
 
+<div id="third" class="box hide">
 
-<div id="page3" class="box page">
+<h1>❤️ My Love ❤️</h1>
 
-
-<h1>💖 My Love Letter 💖</h1>
-
-
-<p class="loveText">
-
+<p>
 I love you today, tomorrow and forever.<br><br>
 
 Until my last breath, I will love you.<br><br>
 
-Thank you for coming into my life, baby.<br><br>
+Thank you for coming into my life baby.<br><br>
 
-You are the love of my life ❤️
-
+You are my love of my life ❤️
 </p>
 
 
-<h2 class="glow">
-
+<h2>
 Kavitha Puppala ❤️ Raju Puppala
-
 </h2>
 
 
-<h3>
-
-Forever & Always 💕
-
-</h3>
-
-
 </div>
-
 
 
 
 <script>
 
 
-function hideAll(){
+function next(){
 
-document.getElementById("page1").style.display="none";
+var n=document.getElementById("username").value;
 
-document.getElementById("page2").style.display="none";
-
-document.getElementById("page3").style.display="none";
-
-}
-
-
-
-function openPage(){
-
-let name=document.getElementById("name").value;
-
-
-if(name==""){
-
-alert("Please enter your name ❤️");
-
+if(n==""){
+alert("Please enter name ❤️");
 return;
-
 }
 
 
-hideAll();
+document.getElementById("first").classList.add("hide");
 
-document.getElementById("page2").style.display="block";
+document.getElementById("second").classList.remove("hide");
 
-document.getElementById("welcome").innerHTML="Hi "+name+" ❤️";
-
-}
-
-
-
-
-function yesClick(){
-
-hideAll();
-
-document.getElementById("page3").style.display="block";
+document.getElementById("hello").innerHTML="Hi "+n+" ❤️";
 
 }
 
 
 
-let no=document.getElementById("noBtn");
+function finalPage(){
 
+document.getElementById("second").classList.add("hide");
 
-no.onmouseover=function(){
-
-no.style.position="absolute";
-
-no.style.left=Math.random()*80+"%";
-
-no.style.top=Math.random()*80+"%";
+document.getElementById("third").classList.remove("hide");
 
 }
 
 
 
-function createHeart(){
+document.getElementById("noBtn").onmouseover=function(){
 
-let heart=document.createElement("div");
+this.style.position="absolute";
 
-heart.className="heart";
+this.style.left=Math.random()*80+"%";
 
-heart.innerHTML="❤️";
+this.style.top=Math.random()*80+"%";
 
-heart.style.left=Math.random()*100+"%";
+}
 
-document.body.appendChild(heart);
+
+
+function heart(){
+
+var h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"%";
+
+document.body.appendChild(h);
 
 
 setTimeout(function(){
-
-heart.remove();
-
-},5000);
+h.remove();
+},4000);
 
 }
 
 
-setInterval(createHeart,300);
+setInterval(heart,500);
 
 
 </script>
