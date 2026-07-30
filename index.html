@@ -273,6 +273,23 @@ to{top:110%;}
 .big{
 font-size:45px;
 }
+  .glow{
+animation: glow 1s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px white;
+}
+to{
+text-shadow:0 0 30px yellow;
+}
+}
+
+.loveText{
+font-size:22px;
+line-height:1.8;
+}
 
 </style>
 
@@ -423,23 +440,7 @@ h.remove();
 
 
 setInterval(hearts,400);
-  .glow{
-animation: glow 1s infinite alternate;
-}
-
-@keyframes glow{
-from{
-text-shadow:0 0 10px white;
-}
-to{
-text-shadow:0 0 30px yellow;
-}
-}
-
-.loveText{
-font-size:22px;
-line-height:1.8;
-}
+  
 
 
 </script>
