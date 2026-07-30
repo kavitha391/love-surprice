@@ -206,6 +206,246 @@ h.remove();
 
 
 setInterval(hearts,500);
+  <!DOCTYPE html>
+<html>
+<head>
+<title>Raju ❤️ Surprise</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+background:linear-gradient(135deg,#ff416c,#ffb6c1);
+font-family:cursive;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+color:white;
+text-align:center;
+}
+
+.box{
+background:rgba(255,255,255,0.25);
+padding:30px;
+border-radius:25px;
+width:85%;
+max-width:400px;
+box-shadow:0 0 20px white;
+}
+
+.page{
+display:none;
+}
+
+input{
+padding:12px;
+border-radius:20px;
+border:none;
+font-size:18px;
+}
+
+button{
+padding:12px 30px;
+border:none;
+border-radius:30px;
+margin:10px;
+background:white;
+color:#ff3366;
+font-size:18px;
+cursor:pointer;
+}
+
+.heart{
+position:absolute;
+font-size:25px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+from{top:-10%;}
+to{top:110%;}
+}
+
+.big{
+font-size:45px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div id="p1" class="box">
+
+<div class="big">💌</div>
+
+<h1>A Small Surprise For You ❤️</h1>
+
+<h2>Enter Your Name</h2>
+
+<input id="name">
+
+<br>
+
+<button onclick="openSurprise()">Open ❤️</button>
+
+</div>
+
+
+
+<div id="p2" class="box page">
+
+<h1 id="hi"></h1>
+
+<h2>Will You Be My Forever? ❤️</h2>
+
+<button onclick="yes()">YES ❤️</button>
+
+<button id="no">NO 😜</button>
+
+</div>
+
+
+
+
+<div id="p3" class="box page">
+
+<h1>💖 My Love Letter 💖</h1>
+
+<p>
+
+Dear Raju ❤️<br><br>
+
+I love you today, tomorrow and forever.<br><br>
+
+Until my last breath, I will love you.<br><br>
+
+Thank you for coming into my life, baby.<br><br>
+
+You are the love of my life ❤️
+
+</p>
+
+<h2>
+Kavitha Puppala ❤️ Raju Puppala
+</h2>
+
+<h3>
+Forever & Always 💕
+
+</h3>
+
+</div>
+
+
+
+<script>
+
+
+function hide(){
+
+p1.style.display="none";
+p2.style.display="none";
+p3.style.display="none";
+
+}
+
+
+function openSurprise(){
+
+let n=document.getElementById("name").value;
+
+if(n==""){
+alert("Please enter your name ❤️");
+return;
+}
+
+hide();
+
+p2.style.display="block";
+
+hi.innerHTML="Hi "+n+" ❤️";
+
+}
+
+
+
+function yes(){
+
+hide();
+
+p3.style.display="block";
+
+}
+
+
+
+let no=document.getElementById("no");
+
+no.onmouseover=function(){
+
+no.style.position="absolute";
+
+no.style.left=Math.random()*80+"%";
+
+no.style.top=Math.random()*80+"%";
+
+}
+
+
+
+function hearts(){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"%";
+
+document.body.appendChild(h);
+
+
+setTimeout(()=>{
+
+h.remove();
+
+},5000);
+
+}
+
+
+setInterval(hearts,400);
+  .glow{
+animation: glow 1s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px white;
+}
+to{
+text-shadow:0 0 30px yellow;
+}
+}
+
+.loveText{
+font-size:22px;
+line-height:1.8;
+}
+
+
+</script>
+
+</body>
+</html>
 
 
 </script>
