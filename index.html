@@ -1,118 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Surprise ❤️</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kavitha ❤️ Raju</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Arial,Helvetica,sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#ffc3e6);
+background-size:400% 400%;
+animation:bg 12s infinite;
+overflow:hidden;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+.container{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+
+}
+
+.card{
+
+background:white;
+width:90%;
+max-width:500px;
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 40px rgba(0,0,0,.25);
+
+}
+
+.hide{
+
+display:none;
+
+}
+
+h1{
+
+color:#ff2d75;
+margin-bottom:20px;
+font-size:38px;
+
+}
+
+h2{
+
+color:#ff2d75;
+margin:20px 0;
+
+}
+
+p{
+
+font-size:20px;
+line-height:1.8;
+color:#555;
+margin:20px 0;
+
+}
+
+input{
+
+width:100%;
+padding:15px;
+font-size:18px;
+border:2px solid pink;
+border-radius:12px;
+outline:none;
+
+}
+
+button{
+
+margin-top:20px;
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:#ff2d75;
+color:white;
+cursor:pointer;
+transition:.4s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+background:#ff0066;
+
+}
+
+#noBtn{
+
+background:#555;
+
+}
+
+#noBtn:hover{
+
+background:black;
+
+}
+
+.heart{
+
+position:fixed;
+top:-30px;
+font-size:30px;
+animation:fall 5s linear forwards;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(110vh);
+
+}
+
+}
+
+.final{
+
+font-size:24px;
+line-height:2;
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <!-- Floating Hearts -->
-    <div class="hearts"></div>
+<div class="container">
 
-    <!-- Welcome Section -->
-    <section class="welcome">
-        <h1>You Are My Love Forever ❤️</h1>
+<!-- PAGE 1 -->
 
-        <p>
-            Every moment with you is the most beautiful memory of my life.
-            This small surprise is made only for you.
-        </p>
+<div class="card" id="page1">
 
-        <button id="startBtn">
-            Open My Heart ❤️
-        </button>
-    </section>
+<h1>💖 Welcome 💖</h1>
 
-    <!-- Love Letter -->
-    <section class="letter hidden" id="letter">
+<p>
 
-        <h2>💌 A Letter For You</h2>
+Enter Your Beautiful Name ❤️
 
-        <p>
-            My Love,
-        </p>
+</p>
 
-        <p>
-            I don't know how to explain how much you mean to me.
-            Every smile of yours makes my day brighter.
-            Every moment with you becomes a beautiful memory.
-        </p>
+<input
+type="text"
+id="username"
+placeholder="Your Name">
 
-        <p>
-            You are my happiness,
-            my strength,
-            my best friend,
-            and my forever person.
-        </p>
+<button onclick="nextPage()">
 
-        <p>
-            No matter what happens,
-            I will always choose you,
-            today,
-            tomorrow,
-            and forever.
-        </p>
+Continue ❤️
 
-        <p class="sign">
-            ❤️ Forever Yours ❤️
-        </p>
+</button>
 
-        <button id="nextBtn">
-            Next Surprise 🎁
-        </button>
+</div>
 
-    </section>
+<!-- PAGE 2 -->
 
-    <!-- Memory Gallery -->
-    <section class="gallery hidden" id="gallery">
+<div class="card hide" id="page2">
 
-        <h2>📸 Our Beautiful Memories</h2>
+<h1 id="welcomeText"></h1>
 
-        <div class="photos">
+<h2>
 
-            <img src="images/photo1.jpg" alt="Photo1">
+Will You Love Me Forever? ❤️
 
-            <img src="images/photo2.jpg" alt="Photo2">
+</h2>
 
-            <img src="images/photo3.jpg" alt="Photo3">
+<button onclick="yesLove()">
 
-            <img src="images/photo4.jpg" alt="Photo4">
+YES ❤️
 
-        </div>
+</button>
 
-        <button id="finalBtn">
-            Final Surprise ❤️
-        </button>
+<button id="noBtn">
 
-    </section>
+NO 😜
 
-    <!-- Final Surprise -->
-    <section class="final hidden" id="final">
+</button>
 
-        <h2>❤️ My Final Surprise ❤️</h2>
+</div>
 
-        <h1>
-            You Are My Love Forever
-        </h1>
+<!-- PAGE 3 -->
 
-        <p>
-            Thank you for being in my life.
-            You are my greatest blessing.
-            I love you more than words can ever express.
-        </p>
+<div class="card hide" id="page3">
 
-        <div class="love">
-            ❤️ ❤️ ❤️ ❤️ ❤️
-        </div>
+<h1>
 
-    </section>
+💌 My Love Letter 💌
 
-    <script src="script.js"></script>
+</h1>
+<p class="final">
+    I love you today,
+tomorrow and forever. ❤️
+
+<br><br>
+
+You are my happiness.
+
+<br><br>
+
+You are my smile.
+
+<br><br>
+
+You are my strength.
+
+<br><br>
+
+You are my best friend.
+
+<br><br>
+
+Thank you for coming into my life.
+
+<br><br>
+
+No matter what happens,
+
+I will always love you.
+
+<br><br>
+
+❤️ Forever Yours ❤️
+
+</p>
+
+<h2>
+
+Kavitha ❤️ Raju
+
+</h2>
+
+<button onclick="showFinal()">
+
+🎁 One More Surprise
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function nextPage(){
+
+let name=document.getElementById("username").value.trim();
+
+if(name==""){
+
+alert("Please enter your beautiful name ❤️");
+
+return;
+
+}
+
+document.getElementById("page1").classList.add("hide");
+
+document.getElementById("page2").classList.remove("hide");
+
+document.getElementById("welcomeText").innerHTML="Hi "+name+" ❤️";
+
+}
+
+function yesLove(){
+
+document.getElementById("page2").classList.add("hide");
+
+document.getElementById("page3").classList.remove("hide");
+
+}
+
+document.getElementById("noBtn").addEventListener("mouseover",function(){
+
+this.style.position="absolute";
+
+this.style.left=Math.random()*80+"%";
+
+this.style.top=Math.random()*80+"%";
+
+});
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(function(){
+
+heart.remove();
+
+},5000);
+
+}
+
+setInterval(createHeart,400);
+
+function showFinal(){
+
+document.body.innerHTML=`
+
+<div style="
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+background:black;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+">
+<h1 style="font-size:60px;color:red;">
+
+❤️ I LOVE YOU ❤️
+
+</h1>
+
+<h2 style="color:pink;">
+
+Raju ❤️
+
+</h2>
+
+<p style="
+
+font-size:24px;
+
+line-height:2;
+
+max-width:700px;
+
+">
+
+Every heartbeat of mine
+
+belongs to you. ❤️
+
+<br><br>
+
+You are my happiness.
+
+<br>
+
+You are my smile.
+
+<br>
+
+You are my forever.
+
+<br><br>
+
+Thank you for coming
+
+into my life.
+
+<br><br>
+
+I promise...
+
+I will love you
+
+today,
+
+tomorrow,
+
+and forever. ❤️
+
+<br><br>
+
+💖 Forever Yours 💖
+
+<br><br>
+
+<b>Kavitha Puppala ❤️</b>
+
+</p>
+
+</div>
+
+`;
+
+}
+
+</script>
 
 </body>
+
 </html>
+    
+
+<p cl
+    <p class="final">ass="final">
