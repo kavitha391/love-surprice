@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kavitha ❤️ Raju</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+body{
+
+height:100vh;
+overflow:hidden;
+font-family:Georgia,serif;
+background:linear-gradient(135deg,#14001f,#4b0028,#000);
+color:white;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+
+/* Opening Page */
+
+.container{
+
+text-align:center;
+animation:fade 2s ease;
+
+}
+
+
+.heart{
+
+font-size:90px;
+animation:beat 1.2s infinite;
+
+}
+
+
+h1{
+
+font-size:55px;
+color:#ffd700;
+text-shadow:0 0 20px pink;
+
+}
+
+
+.subtitle{
+
+font-size:22px;
+margin-top:20px;
+
+}
+
+
+
+button{
+
+margin-top:40px;
+padding:15px 40px;
+border:none;
+border-radius:30px;
+background:#ffd700;
+color:#4b0028;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+
+
+/* Floating hearts */
+
+span{
+
+position:absolute;
+bottom:-50px;
+font-size:25px;
+animation:float 8s linear infinite;
+
+}
+
+
+@keyframes beat{
+
+50%{
+transform:scale(1.3);
+}
+
+}
+
+
+@keyframes float{
+
+100%{
+
+transform:translateY(-110vh);
+opacity:0;
+
+}
+
+}
+
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+
+/* Story Section */
+
+
+.story{
+
+display:none;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+
+background:linear-gradient(135deg,#24002f,#70002d);
+
+padding:40px;
+overflow:auto;
+text-align:center;
+
+}
+
+
+.story h2{
+
+font-size:45px;
+color:#ffd700;
+
+}
+
+
+
+.timeline{
+
+margin-top:40px;
+display:flex;
+flex-direction:column;
+gap:25px;
+align-items:center;
+
+}
+
+
+
+.card{
+
+width:80%;
+max-width:600px;
+
+background:rgba(255,255,255,0.15);
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:0 0 25px #ffd700;
+
+}
+
+
+
+.card h3{
+
+color:#ffd700;
+font-size:28px;
+
+}
+
+
+.card p{
+
+margin-top:15px;
+font-size:18px;
+
+}
+
+
+
+/* Gallery */
+
+
+.gallery{
+
+display:none;
+
+position:absolute;
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+background:linear-gradient(135deg,#15001f,#50002d);
+
+padding:40px;
+
+overflow:auto;
+
+text-align:center;
+
+}
+
+
+
+.gallery h2{
+
+font-size:45px;
+color:#ffd700;
+
+}
+
+
+
+.photos{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+
+
+.photo-card{
+
+background:rgba(255,255,255,0.15);
+
+padding:15px;
+
+border-radius:20px;
+
+}
+
+
+
+.photo-card img{
+
+width:100%;
+height:250px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+}
+
+
+.photo-card p{
+
+margin-top:15px;
+font-size:20px;
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="container">
+
+
+<div class="heart">❤️</div>
+
+
+<h1>Kavitha ❤️ Raju</h1>
+
+
+<p class="subtitle">
+
+A Love Story Written By Destiny ✨
+
+</p>
+
+
+<button onclick="openStory()">
+
+Open Our Story 💌
+
+</button>
+
+
+</div>
+
+
+
+
+<span style="left:10%">❤️</span>
+<span style="left:30%">💖</span>
+<span style="left:50%">❤️</span>
+<span style="left:70%">💕</span>
+<span style="left:90%">❤️</span>
+
+
+
+
+
+<section class="story">
+
+
+<h2>Our Beautiful Journey ❤️</h2>
+
+
+
+<div class="timeline">
+
+
+<div class="card">
+
+<h3>🌹 The Day We Met</h3>
+
+<p>
+Every beautiful story has a beginning ❤️
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>💞 Our Love Story</h3>
+
+<p>
+Small moments became precious memories ✨
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>💍 Our Wedding</h3>
+
+<p>
+A promise to stay together forever ❤️
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>👶 Our Little Prince</h3>
+
+<p>
+Our biggest blessing and miracle ❤️
+</p>
+
+</div>
+
+
+
+</div>
+
+
+<button onclick="openGallery()">
+
+View Memories 📸
+
+</button>
+
+
+</section>
+
+
+
+
+
+<section class="gallery">
+
+
+<h2>Our Precious Memories 📸❤️</h2>
+
+
+<div class="photos">
+
+
+<div class="photo-card">
+
+<img src="photo1.jpg">
+
+<p>Our Memory ❤️</p>
+
+</div>
+
+
+
+<div class="photo-card">
+
+<img src="photo2.jpg">
+
+<p>Our Love 💞</p>
+
+</div>
+
+
+
+<div class="photo-card">
+
+<img src="photo3.jpg">
+
+<p>Our Wedding 💍</p>
+
+</div>
+
+
+
+<div class="photo-card">
+
+<img src="photo4.jpg">
+
+<p>Our Baby 👶</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<script>
+
+
+function openStory(){
+
+document.querySelector(".container").style.display="none";
+
+document.querySelector(".story").style.display="block";
+
+}
+
+
+
+function openGallery(){
+
+document.querySelector(".story").style.display="none";
+
+document.querySelector(".gallery").style.display="block";
+
+}
+
+
+</script>
+
+
+
+</body>
+ </html>
+
+</html>
